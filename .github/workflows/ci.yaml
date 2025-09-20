@@ -14,6 +14,8 @@ concurrency:
 jobs:
   common-jobs:
     uses: ./.github/workflows/common-jobs.yaml
+    with:
+      is_release: false
   dockernize:
     needs:
       - common-jobs
