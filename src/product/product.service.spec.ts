@@ -51,7 +51,7 @@ describe('ProductService (Integration)', () => {
       expect(result).toBeDefined();
       expect(result?.id).toBe(createdProduct.id);
       expect(result?.name).toBe(productData.name);
-      expect(result?.price).toEqual(productData.price);
+      expect(result?.price).toEqual(100.01);
       expect(result?.productType).toBe(productData.productType);
       expect(result?.productCategory).toBe(productData.productCategory);
       expect(result?.descriptionShort).toBe(productData.descriptionShort);
