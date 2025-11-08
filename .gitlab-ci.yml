@@ -1,5 +1,7 @@
 build:
   image: node:20
+  tags:
+    - ubuntu
   script:
     - npm install
     - npx prisma generate
