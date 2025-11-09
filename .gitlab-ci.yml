@@ -3,16 +3,39 @@ workflow:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop")'
     
+stages:
+  - build
+  - lint
 
+.npm_cache: &npm_cache
+  key:
+    files:
+      - package-lock.json
+      - package.json
+  paths:
+    - .npm/
 
 build:
   image: node:20
+  stage: build
   tags:
     - ubuntu
+  cache:
+    <<: *npm_cache
   script:
-    - npm install
+    - npm config set cache ./.npm --global
+    - npm ci
     - npx prisma generate
     - npm run build
 
 
-
+lint:
+  image: node:20
+  stage: lint
+  tags:
+    - ubuntu
+  cache:
+    <<: *npm_cache
+  script:
+    - npm install
+    - npm run lint
