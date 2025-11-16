@@ -119,7 +119,7 @@ jobs:
           args: >
             -Dsonar.projectKey=khantnaingset-kns_mmshop-product-api
             -Dsonar.organization=khantnaingset-kns
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
       
       
