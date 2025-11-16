@@ -17,9 +17,7 @@ describe('AppController', () => {
   describe('root controller #1', () => {
     it('should return "Hello World!"', () => {
       expect(appController.getHello()).toStrictEqual({
-        up: true,
-        ready: true,
-        message: 'Application v0.0.1 is running',
+        message: "Hello! The application is running.",
       });
     });
   });
