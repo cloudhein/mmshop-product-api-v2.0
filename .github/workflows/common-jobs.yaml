@@ -115,11 +115,13 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v6.0.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=khantnaingset-kns_mmshop-product-api
             -Dsonar.organization=khantnaingset-kns
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+      
 
       
       
