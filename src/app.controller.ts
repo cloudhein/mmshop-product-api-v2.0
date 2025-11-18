@@ -8,8 +8,8 @@ export class AppController {
   @Get()
   getHello() {
     return {
-      message: "Hello! The application is running.",
-    }
+      message: 'Hello! The application is running.',
+    };
   }
 
   @Get('/healthz')
