@@ -15,8 +15,10 @@ jobs:
   common-jobs:
     uses: ./.github/workflows/common-jobs.yaml
     secrets:
-      postgres_username: ${{ secrets.POSTGRES_USENAME }}
+      postgres_username: ${{ secrets.POSTGRES_USERNAME }}
       postgres_password: ${{ secrets.POSTGRES_PASSWORD }}
+      sonar_token: ${{ secrets.SONAR_TOKEN }}     
+      sonar_host_url: ${{ vars.SONAR_HOST_URL }}       
     with:
       is_release: false
   dockernize:
