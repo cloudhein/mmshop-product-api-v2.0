@@ -117,6 +117,7 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6.0.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
         with:
           args: >
             -Dsonar.projectKey=cloudhein_mmshop-product-api-v2.0
