@@ -119,10 +119,9 @@ jobs:
           fetch-depth: 0
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5.2.0
+        uses: SonarSource/sonarqube-scan-action@v6.0.0
         env:
           SONAR_TOKEN: ${{ secrets.sonar_token }}        
-          SONAR_HOST_URL: ${{ secrets.sonar_host_url }} 
         with:
           args: >
             -Dsonar.projectKey=cloudhein_mmshop-product-api-v2.0
