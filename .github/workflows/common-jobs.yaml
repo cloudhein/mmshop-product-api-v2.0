@@ -126,5 +126,19 @@ jobs:
           args: >
             -Dsonar.projectKey=cloudhein_mmshop-product-api-v2.0
             -Dsonar.organization=cloudhein
+
+        # Check the Quality Gate status
+      - name: SonarCloud Quality Gate Check
+        id: sonarcloud-quality-gate-check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        with:
+          pollingTimeoutSec: 300
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          # SONAR_HOST_URL is not needed for SonarCloud
+
+      # Optional: Show the Quality Gate status
+      - name: Show SonarCloud Quality Gate Status
+        run: echo "The Quality Gate status is ${{ steps.sonarcloud-quality-gate-check.outputs.quality-gate-status }}"
       
       
