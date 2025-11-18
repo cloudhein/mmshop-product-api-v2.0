@@ -116,12 +116,11 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=khantnaingset-kns_mmshop-product-api
-            -Dsonar.organization=khantnaingset-kns
+            -Dsonar.projectKey=cloudhein_mmshop-product-api-v2.0
+            -Dsonar.organization=cloudhein
       
 
       
