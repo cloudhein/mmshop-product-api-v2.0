@@ -15,7 +15,7 @@ jobs:
   common-jobs:
     uses: ./.github/workflows/common-jobs.yaml
     secrets:
-      postgres_username: ${{ secrets.POSTGRES_USENAME }}
+      postgres_username: ${{ secrets.POSTGRES_USERNAME }}
       postgres_password: ${{ secrets.POSTGRES_PASSWORD }}
     with:
       is_release: false
